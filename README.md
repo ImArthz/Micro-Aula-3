@@ -47,7 +47,7 @@
 </div>
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 1 - Hello World](https://img.shields.io/badge/Wokwi-Projeto_1-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429127490644502529)
+[![Projeto 1 - Hello World](https://img.shields.io/badge/Wokwi-Projeto_1-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569904349137921)
 
 ----------------------------------------
 
@@ -84,10 +84,11 @@
 </div>
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 2 - LEDs e Botões](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429612069389450241)
+[![Projeto 2 - LEDs e Botões](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569895044073473)
 
 ----------------------------------------
 
+# Exercício 3:  
 
 
 
@@ -128,7 +129,7 @@
 ---
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 3 - Display de 7 Segmentos](https://img.shields.io/badge/Wokwi-Projeto_3-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429618760874076161)
+[![Projeto 3 - Display de 7 Segmentos](https://img.shields.io/badge/Wokwi-Projeto_3-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431572574259127297)
 
 ---
 # Exercício 4:  
@@ -162,7 +163,7 @@
 ---  
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 4 - Display de 7 Segmentos com contador](https://img.shields.io/badge/Wokwi-Projeto_4-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429618760874076161)  
+[![Projeto 4 - Display de 7 Segmentos com contador](https://img.shields.io/badge/Wokwi-Projeto_4-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431583804083174401)  
 
 ---  
 
