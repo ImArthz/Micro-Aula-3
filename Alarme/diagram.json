@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "Arthur",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -176.2,
+      "left": 144,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -157.2, "left": 71, "attrs": { "color": "red" } },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -248.84, "left": 105.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -48, "left": 76.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -118.6,
+      "left": 144,
+      "attrs": { "color": "gray", "xray": "" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -170.4,
+      "left": -27,
+      "attrs": { "volume": "0.4" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -48, "left": -10.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "vcc1:VCC", "btn1:1.l", "red", [ "v0" ] ],
+    [ "gnd2:GND", "led1:C", "black", [ "v0" ] ],
+    [ "led1:A", "uno:13", "purple", [ "v76.8", "h28.8" ] ],
+    [ "vcc1:VCC", "btn2:1.l", "red", [ "v0" ] ],
+    [ "btn2:2.r", "uno:3", "purple", [ "h0" ] ],
+    [ "btn1:2.r", "uno:2", "purple", [ "h0" ] ],
+    [ "bz1:2", "uno:12", "purple", [ "v19.2", "h134" ] ],
+    [ "gnd1:GND", "bz1:1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
