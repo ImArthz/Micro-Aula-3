@@ -31,23 +31,17 @@
 
 
 ### Demonstração Visual:  
-<div align="center">
-  <img src="docs/imgs/HelloWorld_atv_1.gif" 
-       alt="Execução do circuito Hello World" 
-       width="600">
-  <br>
-  <em>Circuito Hello World: LED piscando no Arduino .</em>
-</div>
+
 <div align="center">
   <img src="docs/imgs/projeto 1 img.png" 
-       alt="circuito Hello World" 
+       alt="circuito Contado De Interrupções externa" 
        width="600">
   <br>
-  <em>Circuito Hello World: LED piscando no Arduino .</em>
+  <em>Circuito Circuito para conta interropções externas em arduino.</em>
 </div>
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 1 - Hello World](https://img.shields.io/badge/Wokwi-Projeto_1-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569904349137921)
+[![Projeto 1 - Contador de interrupções](https://img.shields.io/badge/Wokwi-Projeto_1-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569904349137921)
 
 ----------------------------------------
 
@@ -67,24 +61,18 @@
 
 
 ### Demonstração Visual:  
-<div align="center">
-  <img src="docs/imgs/LedPisca_atv_2.gif" 
-       alt="Circuito com LEDs e botões" 
-       width="600">
-  <br>
-  <em>Funcionamento do circuito: alternância de LEDs controlada por botões.</em>
-</div>
+
 ### Demonstração Visual:  
 <div align="center">
   <img src="docs/imgs/projeto 2 img.png" 
-       alt="Circuito com LEDs e botões" 
+       alt="Circuito Medidor de tempo de interrupção" 
        width="600">
   <br>
-  <em> Circuito: alternância de LEDs controlada por botões.</em>
+  <em> Circuito: que mede o tempo relativo entre interrupção externa de dois botões.</em>
 </div>
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 2 - LEDs e Botões](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569895044073473)
+[![Projeto 2 - Medidor de tempor de interrupção](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431569895044073473)
 
 ----------------------------------------
 
@@ -111,25 +99,19 @@
 ---
 
 ### Demonstração Visual:  
-<div align="center">
-  <img src="docs/imgs/Display7segN9_atv_3.gif" 
-       alt="Display mostrando o número 9" 
-       width="400">
-  <br>
-  <em>Circuito em funcionamento: número 9 no display de 7 segmentos.</em>
-</div>
+
 <div align="center">
   <img src="docs/imgs/projeto 3 img.png" 
-       alt="Display mostrando o número 9" 
+       alt="Alarme " 
        width="400">
   <br>
-  <em>Circuito número 9 no display de 7 segmentos.</em>
+  <em>Circuito com Alarme.</em>
 </div>
 
 ---
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 3 - Display de 7 Segmentos](https://img.shields.io/badge/Wokwi-Projeto_3-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431572574259127297)
+[![Projeto 3 - Alarme](https://img.shields.io/badge/Wokwi-Projeto_3-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431572574259127297)
 
 ---
 # Exercício 4:  
@@ -154,16 +136,16 @@
 ### Demonstração Visual:  
 <div align="center">
   <img src="docs/imgs/projeto 4 img.png" 
-       alt="Display que mostra de 0 até 9" 
+       alt="Alarme com soneca" 
        width="400">
   <br>
-  <em>Circuito contador ate 9 no display de 7 segmentos.</em>
+  <em>Circuito Alarme com funcionalidade de soneca.</em>
 </div>  
 
 ---  
 
 ### Link para o Projeto no Wokwi:  
-[![Projeto 4 - Display de 7 Segmentos com contador](https://img.shields.io/badge/Wokwi-Projeto_4-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431583804083174401)  
+[![Projeto 4 - Alarme com soneca](https://img.shields.io/badge/Wokwi-Projeto_4-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/431583804083174401)  
 
 ---  
 
