@@ -25,7 +25,7 @@ Neste exercício, desenvolveu-se um circuito utilizando o Arduino para contabili
 
 ### Componentes Principais:
 
-- 1 Arduino Uno.
+- 1 Arduino UNO.
 - 1 Push Button
 - 1 Resistor de 10 kΩ.
 
@@ -89,7 +89,7 @@ Criação de um projeto com Arduino que tem como objetivo medir e contabilizar, 
 
 - 1 Arduino Uno.
 - 2 Push Button.
-- 2 resistores de 10 kΩ.
+- 2 Resistores de 10 kΩ.
 
 ### Código:  
 ```cpp
@@ -171,10 +171,10 @@ Desenvolver um sistema de alarme com Arduino que utilize interrupção externa p
 
 ### Componentes Principais:  
 
-- 1 Arduino Uno.
-- 2 push button.
-- 1 led.
-- 1 buzzer.
+- 1 Arduino UNO.
+- 2 Push Button.
+- 1 Ded.
+- 1 Buzzer.
 
 ---
 
@@ -248,11 +248,15 @@ Após pressionar o primeiro botão, o buzzer imitira um som até ser desativado 
 
 
 ### Objetivo:  
- 
+Desenvolver um sistema de alarme com Arduino que, ao ser ativado, emite um som contínuo. Caso o botão de soneca seja pressionado, o alarme silencia temporariamente (por um período predeterminado), e volta a tocar automaticamente após esse tempo.
 
 ---
 
 ### Componentes Principais:  
+
+- 1 Arduino UNO
+- 1 Buzzer
+- 2 Push Button
 
 ---
 
@@ -337,6 +341,8 @@ void loop() {
 
 ```
 ### Funcionamento:  
+
+O sistema consiste em um alarme controlado por Arduino, que é ativado por um botão. Quando o botão de alarme é pressionado, o sistema dispara um sinal sonoro contínuo por meio de um buzzer. O alarme permanecerá ativo até que o usuário pressione o botão de soneca, o qual silencia temporariamente o alarme.
 
 ---  
 ### Demonstração Visual:  
