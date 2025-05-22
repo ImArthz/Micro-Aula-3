@@ -21,6 +21,14 @@
 
 ### Objetivo:  
 
+Neste exercício, desenvolveu-se um circuito utilizando o Arduino para contabilizar quantas vezes o push button foi pressionado, exibindo esse valor no Monitor Serial.
+
+### Componentes Principais:
+
+- 1 Arduino Uno.
+- 1 Push Button
+- 1 Resistor de 10 kΩ.
+
 
 ### Código:  
 ```cpp
@@ -53,6 +61,7 @@ void incrementarContador() {
 ```
 ### Funcionamento:  
 
+Após o push button ser pressionado, o Serial Print exibe quantas vezes ele foi acionado.
 
 
 ### Demonstração Visual:  
