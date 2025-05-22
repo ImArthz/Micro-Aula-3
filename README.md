@@ -82,10 +82,14 @@ Após o push button ser pressionado, o Serial Print exibe quantas vezes ele foi 
 ## Exercício 2: Medidor de Tempo de Interrupção:
 
 ### Objetivo:  
- 
+
+Criação de um projeto com Arduino que tem como objetivo medir e contabilizar, em milissegundos, o tempo decorrido entre o acionamento de dois push buttons.
 
 ### Componentes Principais:  
 
+- 1 Arduino Uno.
+- 2 Push Button.
+- 2 resistores de 10 kΩ.
 
 ### Código:  
 ```cpp
@@ -137,6 +141,7 @@ void lastTime () {
 ```
 ### Funcionamento:  
 
+O programa utiliza interrupções externas para detectar os eventos de pressão dos botões: o primeiro botão inicia a contagem de tempo e o segundo botão encerra a contagem, permitindo assim calcular com precisão o intervalo entre os dois eventos.
 
 ### Demonstração Visual:  
 
