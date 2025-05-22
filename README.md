@@ -17,13 +17,38 @@
 </div>
 
 
-## Exercício 1:  
+## Exercício 1: Contador de Interrupções Externas:
 
 ### Objetivo:  
 
 
 ### Código:  
-```
+```cpp
+volatile int contador = 0;
+volatile unsigned long ultimaInterrupcao = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(2, INPUT);
+  attachInterrupt(digitalPinToInterrupt(2), incrementarContador, RISING);
+}
+
+void loop() {
+  Serial.print("Contador: ");
+  Serial.println(contador);
+  delay(500);
+}
+
+void incrementarContador() {
+  unsigned long tempoAtual = millis();
+  
+  // Verifica se passou pelo menos 200ms desde a última interrupção
+  if (tempoAtual - ultimaInterrupcao > 200) {
+    contador++;
+    ultimaInterrupcao = tempoAtual;
+  }
+}
+
 
 ```
 ### Funcionamento:  
@@ -45,7 +70,7 @@
 
 ----------------------------------------
 
-## Exercício 2: 
+## Exercício 2: Medidor de Tempo de Interrupção:
 
 ### Objetivo:  
  
@@ -54,7 +79,51 @@
 
 
 ### Código:  
-```
+```cpp
+volatile float time_pri = 0;
+volatile float time_sec = 0;
+
+unsigned long lastInterruptTime1 = 0;
+unsigned long lastInterruptTime2 = 0;
+const unsigned long debounceDelay = 200; // 200ms de debounce
+
+void setup() {
+  Serial.begin(9600);
+  Serial.flush();
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
+  attachInterrupt(digitalPinToInterrupt(2), firstTime, RISING);
+  attachInterrupt(digitalPinToInterrupt(3), lastTime, RISING);
+}
+
+void loop() {
+  // Nada aqui por enquanto
+}
+
+void firstTime () {
+  unsigned long currentTime = millis();
+
+  if (currentTime - lastInterruptTime1 > debounceDelay) {
+    time_pri = currentTime;
+    Serial.println("Clicked Button 1");
+    lastInterruptTime1 = currentTime;
+  }
+}
+
+void lastTime () {
+  unsigned long currentTime = millis();
+
+  if (currentTime - lastInterruptTime2 > debounceDelay) {
+    time_sec = currentTime;
+    float diffTime = (time_sec - time_pri) / 1000.0;
+
+    Serial.println("Clicked Button 2");
+    Serial.print("Diff Time: ");
+    Serial.println(diffTime, 3); // 3 casas decimais
+
+    lastInterruptTime2 = currentTime;
+  }
+}
 
 ```
 ### Funcionamento:  
@@ -76,7 +145,7 @@
 
 ----------------------------------------
 
-# Exercício 3:  
+# Exercício 3: Alarme de Interrupção com Cancelamento:
 
 
 
@@ -91,7 +160,47 @@
 ---
 
 ### Código:  
-```
+```cpp
+int Sensorpin = 2;
+int Cancelpin = 3;
+int Ledpin = 13;
+
+bool pressed = false;
+
+void press()
+{
+  pressed = true;
+  digitalWrite(Ledpin, HIGH);
+}
+
+void pause()
+{
+  digitalWrite(Ledpin, LOW);
+  pressed = false;
+}
+
+void setup()
+{
+  Serial.begin(9600);
+
+  pinMode(Sensorpin,INPUT);
+  pinMode(Cancelpin,INPUT);
+  pinMode(Ledpin,INPUT);
+
+  attachInterrupt(digitalPinToInterrupt(Sensorpin),press,RISING);
+  attachInterrupt(digitalPinToInterrupt(Cancelpin),pause,RISING);
+}
+
+void loop()
+{
+  if(pressed == true)
+  {
+    tone(12, 301, 250);
+  }
+  delay(200);
+}
+
+
 ```
 ### Funcionamento:  
  
@@ -128,7 +237,84 @@
 ---
 
 ### Código:  
-```
+```cpp
+volatile bool alarmeAtivo = false;
+volatile bool modoSoneca = false;
+volatile bool botaoToggle = false;
+volatile uint16_t contadorTempo = 0;
+
+void acionarToggle() {
+  botaoToggle = true;
+}
+
+void ativarSoneca() {
+  if (alarmeAtivo) {
+    alarmeAtivo = false;
+    modoSoneca = true;
+
+    contadorTempo = 0;
+    TCNT1 = 0;
+
+    Serial.println("Soneca Iniciada");
+  }
+}
+
+ISR(TIMER1_COMPA_vect) {
+  contadorTempo++;
+  TCNT1 = 0;
+}
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(13, OUTPUT);   // LED ou Buzzer
+  pinMode(2, INPUT);     // Botão Toggle
+  pinMode(3, INPUT);     // Botão Soneca
+
+  attachInterrupt(digitalPinToInterrupt(2), acionarToggle, RISING);
+  attachInterrupt(digitalPinToInterrupt(3), ativarSoneca, RISING);
+
+  cli();  // Desabilita interrupções globais temporariamente
+
+  TCCR1A = 0b00000000;   // Timer em modo normal
+  TCCR1B = 0b00001000;   // CTC (Clear Timer on Compare Match)
+  TCCR1B = 0b00000101;   // Prescaler em 1024
+
+  OCR1A = 15625;         // Valor para 1 segundo
+  TIMSK1 |= 0b00000010;  // Habilita interrupção por comparação A
+
+  sei();  // Reabilita interrupções globais
+}
+
+void loop() {
+  if (modoSoneca) {
+    if (contadorTempo >= 5) {
+      Serial.println("Soneca Finalizada");
+      alarmeAtivo = true;
+      modoSoneca = false;
+
+      contadorTempo = 0;
+      TCNT1 = 0;
+    }
+  }
+
+  if (alarmeAtivo) {
+    tone(13, 262, 20);
+    if (contadorTempo >= 30) {
+      alarmeAtivo = false;
+    }
+  }
+
+  if (botaoToggle) {
+    alarmeAtivo = !alarmeAtivo;
+    botaoToggle = false;
+
+    contadorTempo = 0;
+    TCNT1 = 0;
+  }
+}
+
+
 ```
 ### Funcionamento:  
 
