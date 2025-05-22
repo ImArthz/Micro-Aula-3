@@ -118,7 +118,7 @@ void firstTime () {
 
   if (currentTime - lastInterruptTime1 > debounceDelay) {
     time_pri = currentTime;
-    Serial.println("Clicked Button 1");
+    Serial.println("Clicou botão 1");
     lastInterruptTime1 = currentTime;
   }
 }
@@ -130,8 +130,8 @@ void lastTime () {
     time_sec = currentTime;
     float diffTime = (time_sec - time_pri) / 1000.0;
 
-    Serial.println("Clicked Button 2");
-    Serial.print("Diff Time: ");
+    Serial.println("Clicou botão 2");
+    Serial.print("Diferença de tempo : ");
     Serial.println(diffTime, 3); // 3 casas decimais
 
     lastInterruptTime2 = currentTime;
