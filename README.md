@@ -165,11 +165,16 @@ O programa utiliza interrupções externas para detectar os eventos de pressão 
 
 
 ### Objetivo:  
-
+Desenvolver um sistema de alarme com Arduino que utilize interrupção externa para detectar movimento (via push button no pino 2). Quando o botão é pressionado, um LED acende e um buzzer emite som, mantendo o alarme ativado. Um segundo botão, conectado a outro pino (sem interrupção), serve para desligar o alarme.
 
 ---
 
 ### Componentes Principais:  
+
+- 1 Arduino Uno.
+- 2 push button.
+- 1 led.
+- 1 buzzer.
 
 ---
 
@@ -217,7 +222,8 @@ void loop()
 
 ```
 ### Funcionamento:  
- 
+
+Após pressionar o primeiro botão, o buzzer imitira um som até ser desativado pressionando o outro push button.
 
 ---
 
